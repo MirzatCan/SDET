@@ -3,6 +3,8 @@ package Utlity;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeDriverService;
 
 import java.time.Duration;
 
@@ -12,8 +14,9 @@ public class BaseDriver {
     static{
         KalanOncekileriKapat();
         System.setProperty(ChromeDriverService.CHROME_DRIVER_SILENT_OUTPUT_PROPERTY, "true");
-        driver = new ChromeDriver();
-
+        System.setProperty(EdgeDriverService.EDGE_DRIVER_SILENT_OUTPUT_PROPERTY,"true");
+//        driver = new ChromeDriver();
+        driver = new EdgeDriver();
         driver.manage().window().maximize();//Ekrani max yapiyor
 
         Duration dr=Duration.ofSeconds(30);
